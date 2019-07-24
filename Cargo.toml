@@ -1,0 +1,9 @@
+[package]
+name = "code_challenge"
+version = "0.1.0"
+authors = ["vandomej"]
+
+[dependencies]
+
+[profile.dev]
+opt-level = 3
