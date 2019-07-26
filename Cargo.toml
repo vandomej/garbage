@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["vandomej"]
 
 [dependencies]
+rayon = "1.1.0"
 
 [profile.dev]
 opt-level = 3
