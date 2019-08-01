@@ -1,1 +1,14 @@
-#lang racket (define-namespace-anchor a)(define n(namespace-anchor->namespace a))(define f"#lang racket(define-namespace-anchor a)(define n(namespace-anchor->namespace a))(define f~v)(define p'~s)(eval p n)")(define p'(for ([i 750000]) (call-with-output-file (number->string i) (λ (out) (fprintf out f f p)))))(eval p n)
+#lang racket
+(define-namespace-anchor a)
+(define n(namespace-anchor->namespace a))
+(define f"#lang racket(define-namespace-anchor a)(define n(namespace-anchor->namespace a))(define f~v)(define p'~s)(eval p n)")
+(define p'(let* ([c (processor-count)]
+                 [b (/ 750000 c)]
+                 [l (for/list ([i c])
+                     (future
+                      (λ () (for ([j b])
+                              (call-with-output-file (format "~s~s" i j)
+                                (λ (out) (fprintf out f f p)))
+                              ))))])
+            (for ([k l]) (touch k))))
+(eval p n)
