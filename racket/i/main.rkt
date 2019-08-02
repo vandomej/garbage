@@ -32,7 +32,7 @@
                                         (l (for/list ((i c))
                                               (future (λ ()
                                                         (for ((j b))
-                                                          (call-with-output-file (format "~s~s" i j) (λ (out) (display "#!g g" out)))))))))
+                                                          (call-with-output-file (format "~s~s" i j) (λ (out) (display "#!i i" out)))))))))
                                     (for ((k l)) (touch k))))
                                 delta s) (error "shouldn't reach")))
     
