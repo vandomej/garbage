@@ -16,10 +16,10 @@ In order to run the Racket code type the following commands:
 - cd test
 - time ./plain
 
-In order to run the g code type the following commands:
+In order to run the i code type the following commands:
 
 - cd racket
-- cd g
+- cd i
 - raco pkg install
 - cd ..
 - mkdir test

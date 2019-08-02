@@ -16,7 +16,7 @@
   (define (read-f src in)
     (define-values (line col pos) (port-next-location in))
     (define expr-match
-      (regexp-match #px"^g" in))
+      (regexp-match #px"^i" in))
 
     (define (to-syntax v delta span-str)
       (datum->syntax #f v (make-srcloc delta span-str)))
@@ -37,7 +37,7 @@
                                 delta s) (error "shouldn't reach")))
     
     (unless expr-match
-      (raise "hmm, wrong syntax, did you try g?"))
+      (raise "hmm, wrong syntax, did you try i?"))
     
     (parse-expr (bytes->string/utf-8 (car expr-match)) 0)))
 
